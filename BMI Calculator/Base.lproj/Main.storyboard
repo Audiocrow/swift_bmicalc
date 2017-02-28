@@ -30,9 +30,10 @@
                             <userLayoutGuide location="275" affinity="minY"/>
                             <userLayoutGuide location="304" affinity="minX"/>
                             <userLayoutGuide location="187" affinity="minX"/>
+                            <userLayoutGuide location="325" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height(in)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Nz-h1-ELD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Height(in)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Nz-h1-ELD">
                                 <rect key="frame" x="139" y="62" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,7 +51,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight(lbs)" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-8r-egI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight(lbs)" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pF1-8r-egI">
                                 <rect key="frame" x="139" y="160" width="97" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,9 +70,9 @@
                                 </connections>
                             </switch>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hO0-0s-7f5">
-                                <rect key="frame" x="112" y="275" width="150" height="21"/>
+                                <rect key="frame" x="112" y="292" width="150" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="6sH-UD-o6L"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="320" id="6sH-UD-o6L"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="63" id="cmd-78-cFf"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="zX9-BB-Vde"/>
                                 </constraints>
@@ -91,7 +92,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="doctor-dog.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-zk-6uP">
-                                <rect key="frame" x="67" y="341" width="240" height="128"/>
+                                <rect key="frame" x="67" y="383" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="B0c-sO-rnl"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="256" id="Fon-l5-whN"/>
@@ -99,6 +100,18 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="126" id="tsP-Zy-ABX"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zss-mS-wmM" userLabel="FindHealthy">
+                                <rect key="frame" x="100" y="339" width="175" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.87536701520000004" blue="0.28267306990000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="0.5" height="1"/>
+                                <state key="normal" title="Calculate Healthy Weight">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uVf-Ly-hEb"/>
+                                    <action selector="calculateHealthyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HWq-pP-dCm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -109,11 +122,13 @@
                             <constraint firstItem="3Nz-h1-ELD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J0f-8Z-eFI"/>
                             <constraint firstItem="UIs-Cn-7EB" firstAttribute="top" secondItem="3Nz-h1-ELD" secondAttribute="bottom" constant="33" id="Jii-XO-iPR"/>
                             <constraint firstItem="3Nz-h1-ELD" firstAttribute="top" secondItem="WfT-gL-GCy" secondAttribute="bottom" constant="16" id="Jwd-nr-cOL"/>
+                            <constraint firstItem="zss-mS-wmM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NWm-gA-FHH"/>
                             <constraint firstItem="hO0-0s-7f5" firstAttribute="top" secondItem="T6s-au-9x3" secondAttribute="bottom" constant="8" id="O1a-u7-7Uc"/>
                             <constraint firstItem="T6s-au-9x3" firstAttribute="top" secondItem="kd7-vv-Y76" secondAttribute="bottom" constant="12" id="WG5-vS-bro"/>
                             <constraint firstItem="UIs-Cn-7EB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X3a-V1-pGy"/>
                             <constraint firstItem="T6s-au-9x3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="chh-ka-qKi"/>
-                            <constraint firstItem="lWx-zk-6uP" firstAttribute="top" secondItem="hO0-0s-7f5" secondAttribute="bottom" constant="25" id="hWW-Pt-hDV"/>
+                            <constraint firstItem="lWx-zk-6uP" firstAttribute="top" secondItem="zss-mS-wmM" secondAttribute="bottom" constant="8" id="ez7-d1-wno"/>
+                            <constraint firstItem="zss-mS-wmM" firstAttribute="top" secondItem="hO0-0s-7f5" secondAttribute="bottom" constant="8" id="ezH-Or-jnN"/>
                             <constraint firstItem="WfT-gL-GCy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="ifZ-Gs-fTa"/>
                             <constraint firstItem="pF1-8r-egI" firstAttribute="leading" secondItem="kd7-vv-Y76" secondAttribute="trailing" constant="-48" id="pgD-W9-SVa"/>
                             <constraint firstItem="f6c-VL-QDW" firstAttribute="leading" secondItem="kd7-vv-Y76" secondAttribute="trailing" constant="48" id="phM-XH-dYG"/>
@@ -131,6 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="42.728635682158924"/>
         </scene>
     </scenes>
     <resources>
