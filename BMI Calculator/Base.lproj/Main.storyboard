@@ -81,6 +81,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6s-au-9x3">
                                 <rect key="frame" x="137" y="237" width="100" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.87536701522697347" blue="0.28267306992955621" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="titleShadowOffset" width="0.5" height="1"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
